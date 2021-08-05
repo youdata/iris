@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Reflexiv Iris Data Browser</title>
+    <script src="./lib.js"></script>
+</head>
+
+<body>
+    <div id="container">
+    </div>
+    <script>
+        (function(S) {
+           var el = document.getElementById("container")
+            var state = {io:"b-13", xaxis:"petal_width", yaxis:"petal_height"}
+           var container = S.app.create(el,state) 
+           var top = 30
+           window.addEventListener("resize", (d) => {
+             container.width =  window.innerWidth
+             container.height = window.innerHeight - top
+             container.emit("resize")
+            })
+           
+        })(sand)
+    </script>
+</body>
+
+</html>
